@@ -71,6 +71,16 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       color: var(--teal); border-left: 2px solid var(--border);
       padding-left: 10px; margin-left: 4px;
     }
+    .nav-links {
+      display: flex; align-items: center; gap: 6px;
+    }
+    .nav-link {
+      color: var(--ink-soft); text-decoration: none;
+      font-size: 0.88rem; font-weight: 500;
+      padding: 8px 14px; border-radius: 8px;
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav-link:hover { color: var(--teal); background: var(--teal-pale); }
     .btn-primary {
       background: var(--teal); color: white; border: none; cursor: pointer;
       font-family: inherit; font-weight: 600;
@@ -80,17 +90,79 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       display: inline-block;
     }
     .btn-primary:hover { background: var(--yellow); color: var(--ink); transform: translateY(-1px); }
-    footer {
-      padding: 36px 48px;
-      border-top: 1px solid var(--border);
-      display: flex; align-items: center; justify-content: space-between;
-      flex-wrap: wrap; gap: 12px; margin-top: 80px;
+
+    /* Menu burger mobile */
+    .nav-burger {
+      display: none;
+      flex-direction: column; gap: 5px;
+      cursor: pointer; padding: 6px;
+      background: none; border: none;
     }
-    footer p { font-size: 0.8rem; color: var(--ink-muted); }
-    footer a { color: var(--teal); text-decoration: none; font-size: 0.8rem; }
+    .nav-burger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--ink); border-radius: 2px;
+      transition: all 0.25s;
+    }
+    .nav-mobile {
+      display: none;
+      flex-direction: column; gap: 4px;
+      padding: 12px 20px 16px;
+      background: rgba(248,250,250,0.98);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-mobile.open { display: flex; }
+    .nav-mobile a {
+      color: var(--ink-soft); text-decoration: none;
+      font-size: 0.95rem; font-weight: 500;
+      padding: 10px 12px; border-radius: 8px;
+      transition: background 0.2s;
+    }
+    .nav-mobile a:hover { background: var(--teal-pale); color: var(--teal); }
+    .nav-mobile .btn-primary {
+      margin-top: 8px; text-align: center; width: 100%;
+    }
+
+    footer {
+      padding: 48px 48px 36px;
+      border-top: 1px solid var(--border);
+      margin-top: 80px;
+    }
+    .footer-top {
+      display: flex; align-items: flex-start; justify-content: space-between;
+      flex-wrap: wrap; gap: 32px; margin-bottom: 32px;
+    }
+    .footer-brand p {
+      font-size: 0.82rem; color: var(--ink-muted);
+      margin-top: 8px; max-width: 240px; line-height: 1.6;
+    }
+    .footer-links { display: flex; gap: 48px; flex-wrap: wrap; }
+    .footer-col h4 {
+      font-size: 0.72rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.08em;
+      color: var(--ink-muted); margin-bottom: 12px;
+    }
+    .footer-col a {
+      display: block; color: var(--ink-soft);
+      text-decoration: none; font-size: 0.85rem;
+      margin-bottom: 8px; transition: color 0.2s;
+    }
+    .footer-col a:hover { color: var(--teal); }
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding-top: 20px;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 8px;
+    }
+    .footer-bottom p { font-size: 0.78rem; color: var(--ink-muted); }
+
     @media (max-width: 768px) {
       nav { padding: 14px 20px; }
-      footer { flex-direction: column; padding: 24px 20px; }
+      .nav-links { display: none; }
+      .nav-burger { display: flex; }
+      footer { padding: 36px 20px 24px; }
+      .footer-top { flex-direction: column; gap: 24px; }
+      .footer-links { gap: 24px; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
@@ -111,15 +183,60 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       </svg>
       <span class="nav-blog-label">Blog</span>
     </a>
-    <a href="https://exercia.org/auth?mode=signup" class="btn-primary">S'inscrire gratuitement</a>
+    <div class="nav-links">
+      <a href="/" class="nav-link">Articles</a>
+      <a href="https://exercia.org/pricing" class="nav-link">Tarifs</a>
+      <a href="https://exercia.org/auth?mode=signup" class="btn-primary">S'inscrire gratuitement</a>
+    </div>
+    <button class="nav-burger" id="burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
+
+  <div class="nav-mobile" id="nav-mobile">
+    <a href="/">Articles</a>
+    <a href="https://exercia.org/pricing">Tarifs</a>
+    <a href="https://exercia.org" >← Retour sur Exercia</a>
+    <a href="https://exercia.org/auth?mode=signup" class="btn-primary">S'inscrire gratuitement</a>
+  </div>
 
   <slot />
 
   <footer>
-    <a href="https://exercia.org">← Retour sur Exercia</a>
-    <p>© 2026 Exercia — Préparation au CRPE</p>
-    <a href="https://exercia.org/auth?mode=signup">Commencer gratuitement</a>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="https://exercia.org" style="text-decoration:none; color:var(--ink); font-weight:700; font-size:1rem;">Exercia</a>
+        <p>L'entraînement quotidien pour réussir le CRPE. 20 minutes par jour, exercices ciblés.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Blog</h4>
+          <a href="/reforme-crpe-2026-bac3">Réforme CRPE 2026</a>
+          <a href="/exercices-maths-crpe-themes-les-plus-tombes">Maths CRPE</a>
+          <a href="/preparer-crpe-reconversion-3-mois">CRPE en reconversion</a>
+          <a href="/crpe-francais-fautes-orthographe">Français CRPE</a>
+        </div>
+        <div class="footer-col">
+          <h4>Exercia</h4>
+          <a href="https://exercia.org">Accueil</a>
+          <a href="https://exercia.org/pricing">Tarifs</a>
+          <a href="https://exercia.org/crpe/maths">Maths CRPE</a>
+          <a href="https://exercia.org/crpe/francais">Français CRPE</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Exercia — Préparation au CRPE</p>
+      <a href="https://exercia.org/auth?mode=signup" style="color:var(--teal); font-size:0.82rem; font-weight:600; text-decoration:none;">Commencer gratuitement →</a>
+    </div>
   </footer>
+
+  <script>
+    const burger = document.getElementById('burger');
+    const mobileNav = document.getElementById('nav-mobile');
+    burger?.addEventListener('click', () => {
+      mobileNav?.classList.toggle('open');
+    });
+  </script>
 </body>
 </html>
