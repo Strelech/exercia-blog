@@ -1,0 +1,125 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  pubDate?: string;
+  isArticle?: boolean;
+}
+const { title, description, pubDate, isArticle = false } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="canonical" href={canonicalURL} />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content={isArticle ? 'article' : 'website'} />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:site_name" content="Exercia Blog" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  {isArticle && pubDate && <meta property="article:published_time" content={pubDate} />}
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --teal:       #0F838F;
+      --teal-light: #1aa8b6;
+      --teal-dark:  #0a5f69;
+      --teal-pale:  #e6f5f6;
+      --yellow:     #EAC435;
+      --cream:      #f8fafa;
+      --ink:        #181c1c;
+      --ink-soft:   #455050;
+      --ink-muted:  #8a9595;
+      --white:      #ffffff;
+      --border:     #dde8e8;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      overflow-x: hidden;
+    }
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 48px;
+      background: rgba(248,250,250,0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 10px;
+      text-decoration: none; color: var(--ink);
+      font-weight: 700; font-size: 1.1rem;
+    }
+    .nav-logo svg { height: 32px; width: auto; }
+    .nav-blog-label {
+      font-size: 0.72rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--teal); border-left: 2px solid var(--border);
+      padding-left: 10px; margin-left: 4px;
+    }
+    .btn-primary {
+      background: var(--teal); color: white; border: none; cursor: pointer;
+      font-family: inherit; font-weight: 600;
+      font-size: 0.88rem; padding: 10px 20px; border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: var(--yellow); color: var(--ink); transform: translateY(-1px); }
+    footer {
+      padding: 36px 48px;
+      border-top: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 12px; margin-top: 80px;
+    }
+    footer p { font-size: 0.8rem; color: var(--ink-muted); }
+    footer a { color: var(--teal); text-decoration: none; font-size: 0.8rem; }
+    @media (max-width: 768px) {
+      nav { padding: 14px 20px; }
+      footer { flex-direction: column; padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="https://exercia.org" class="nav-logo">
+      <svg height="32" viewBox="0 0 360 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="ringGrad" x1="38" y1="14" x2="94" y2="96" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#0F838F"/>
+            <stop offset="55%" stop-color="#0a5f69"/>
+            <stop offset="100%" stop-color="#063d44"/>
+          </linearGradient>
+        </defs>
+        <circle cx="70" cy="55" r="34" stroke="url(#ringGrad)" stroke-width="10" stroke-linecap="round" fill="none" stroke-dasharray="180 60" stroke-dashoffset="18"/>
+        <path d="M54 55.5L66 67.5L88 43" stroke="#0F838F" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <text x="120" y="70" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="52" font-weight="700" fill="#181c1c" letter-spacing="-1">Exercia</text>
+      </svg>
+      <span class="nav-blog-label">Blog</span>
+    </a>
+    <a href="https://exercia.org/auth" class="btn-primary">S'inscrire gratuitement</a>
+  </nav>
+
+  <slot />
+
+  <footer>
+    <a href="https://exercia.org">← Retour sur Exercia</a>
+    <p>© 2026 Exercia — Préparation au CRPE</p>
+    <a href="https://exercia.org/auth">Commencer gratuitement</a>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,253 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const articles = [
+  {
+    slug: 'reforme-crpe-2026-bac3',
+    title: 'Réforme CRPE 2026 : ce qui change avec le passage au Bac+3',
+    description: 'La réforme CRPE 2026 abaisse le niveau requis au Bac+3. Nouvelles épreuves, nouveau calendrier : tout ce qui change.',
+    category: 'Réforme',
+    readTime: '6 min',
+    pubDate: '2026-03-12',
+    priority: true,
+  },
+  {
+    slug: 'exercices-maths-crpe-themes-les-plus-tombes',
+    title: 'Maths CRPE : les 5 thèmes les plus tombés aux épreuves',
+    description: 'Quels thèmes de maths tombent le plus souvent au CRPE ? Numération, fractions, géométrie... Concentre-toi sur l\'essentiel.',
+    category: 'Mathématiques',
+    readTime: '7 min',
+    pubDate: '2026-03-12',
+    priority: false,
+  },
+  {
+    slug: 'preparer-crpe-reconversion-3-mois',
+    title: 'Préparer le CRPE en reconversion : la méthode en 3 mois',
+    description: 'Méthode concrète pour réussir le CRPE en reconversion, même avec un emploi et une vie de famille.',
+    category: 'Reconversion',
+    readTime: '8 min',
+    pubDate: '2026-03-12',
+    priority: true,
+  },
+  {
+    slug: 'crpe-epreuve-application-arts-plastiques',
+    title: 'CRPE Arts Plastiques 2026 : tout savoir sur l\'épreuve d\'application',
+    description: 'Programme, attendus et conseils pour préparer l\'épreuve d\'application Arts Plastiques du CRPE 2026.',
+    category: 'Arts Plastiques',
+    readTime: '6 min',
+    pubDate: '2026-03-12',
+    priority: false,
+  },
+  {
+    slug: 'crpe-epreuve-application-choisir-discipline',
+    title: 'CRPE : comment choisir son épreuve d\'application ?',
+    description: 'Arts plastiques, Histoire-Géo, Sciences, Sport, Langues : comment choisir ta discipline pour l\'épreuve d\'application du CRPE 2026 ?',
+    category: 'Stratégie',
+    readTime: '7 min',
+    pubDate: '2026-03-12',
+    priority: false,
+  },
+  {
+    slug: 'crpe-francais-fautes-orthographe',
+    title: 'CRPE Français : les fautes d\'orthographe qui coûtent des points',
+    description: 'Quelles fautes d\'orthographe font perdre le plus de points au CRPE ? Accords, conjugaison, homophones : le guide.',
+    category: 'Français',
+    readTime: '8 min',
+    pubDate: '2026-03-12',
+    priority: false,
+  },
+];
+
+const categoryColors: Record<string, string> = {
+  'Réforme': '#0F838F',
+  'Mathématiques': '#2563eb',
+  'Reconversion': '#7c3aed',
+  'Arts Plastiques': '#db2777',
+  'Stratégie': '#d97706',
+  'Français': '#059669',
+};
+---
+
+<Layout
+  title="Blog Exercia — Préparer le CRPE efficacement"
+  description="Conseils, méthodes et ressources pour préparer le CRPE 2026. Réforme, maths, français, épreuves d'application : tout pour réussir le concours."
+>
+  <style>
+    .blog-hero {
+      background: var(--ink);
+      padding: 72px 24px 56px;
+      text-align: center;
+    }
+    .blog-hero-tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(15,131,143,0.2); color: var(--teal-light);
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; padding: 5px 12px; border-radius: 20px;
+      margin-bottom: 20px;
+    }
+    .blog-hero h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700; color: white;
+      line-height: 1.1; letter-spacing: -0.02em;
+      max-width: 600px; margin: 0 auto 16px;
+    }
+    .blog-hero p {
+      font-size: 1rem; color: rgba(255,255,255,0.62);
+      max-width: 480px; margin: 0 auto; line-height: 1.65;
+    }
+
+    .blog-container {
+      max-width: 1080px; margin: 0 auto;
+      padding: 64px 24px;
+    }
+
+    .featured-article {
+      background: white; border-radius: 20px;
+      border: 1px solid var(--border);
+      padding: 40px; margin-bottom: 48px;
+      display: grid; grid-template-columns: 1fr auto;
+      gap: 32px; align-items: center;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.05);
+      text-decoration: none; color: inherit;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .featured-article:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+    }
+    .featured-label {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--teal);
+      margin-bottom: 12px;
+    }
+    .featured-article h2 {
+      font-size: 1.65rem; font-weight: 700;
+      color: var(--ink); letter-spacing: -0.02em;
+      line-height: 1.2; margin-bottom: 12px;
+    }
+    .featured-article p {
+      font-size: 0.92rem; color: var(--ink-soft);
+      line-height: 1.65; margin-bottom: 16px;
+    }
+    .featured-badge {
+      background: var(--teal); color: white;
+      padding: 80px 36px; border-radius: 14px;
+      text-align: center; flex-shrink: 0;
+    }
+    .featured-badge .big-num {
+      font-size: 3rem; font-weight: 700; color: white;
+      line-height: 1; display: block; margin-bottom: 6px;
+    }
+    .featured-badge .big-label {
+      font-size: 0.75rem; color: rgba(255,255,255,0.75);
+      text-transform: uppercase; letter-spacing: 0.08em;
+    }
+
+    .articles-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+    .article-card {
+      background: white; border-radius: 16px;
+      border: 1px solid var(--border); padding: 26px;
+      text-decoration: none; color: inherit;
+      display: flex; flex-direction: column; gap: 12px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    }
+    .article-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.09);
+    }
+    .article-cat {
+      display: inline-block;
+      font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.09em; text-transform: uppercase;
+      padding: 4px 10px; border-radius: 20px;
+      color: white; width: fit-content;
+    }
+    .article-card h2 {
+      font-size: 1rem; font-weight: 700;
+      color: var(--ink); line-height: 1.35;
+      letter-spacing: -0.01em;
+    }
+    .article-card p {
+      font-size: 0.85rem; color: var(--ink-soft);
+      line-height: 1.6; flex: 1;
+    }
+    .article-meta {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 0.75rem; color: var(--ink-muted);
+      border-top: 1px solid var(--border);
+      padding-top: 12px; margin-top: auto;
+    }
+    .read-more {
+      font-size: 0.8rem; font-weight: 600;
+      color: var(--teal); margin-left: auto;
+    }
+
+    .section-label {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.11em;
+      text-transform: uppercase; color: var(--teal); margin-bottom: 24px;
+    }
+
+    @media (max-width: 900px) {
+      .articles-grid { grid-template-columns: repeat(2, 1fr); }
+      .featured-article { grid-template-columns: 1fr; }
+      .featured-badge { display: none; }
+    }
+    @media (max-width: 600px) {
+      .articles-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <div class="blog-hero">
+    <div class="blog-hero-tag">Ressources CRPE 2026</div>
+    <h1>Tout pour réussir le CRPE.</h1>
+    <p>Méthodes, conseils et exercices — pensés pour les candidats qui préparent seuls.</p>
+  </div>
+
+  <div class="blog-container">
+
+    <!-- Article featured -->
+    {articles.filter(a => a.priority).slice(0,1).map(article => (
+      <a href={`/${article.slug}`} class="featured-article">
+        <div>
+          <div class="featured-label">À lire en priorité</div>
+          <h2>{article.title}</h2>
+          <p>{article.description}</p>
+          <div class="article-meta">
+            <span>⏱ {article.readTime} de lecture</span>
+            <span class="read-more">Lire l'article →</span>
+          </div>
+        </div>
+        <div class="featured-badge">
+          <span class="big-num">2026</span>
+          <span class="big-label">Réforme CRPE</span>
+        </div>
+      </a>
+    ))}
+
+    <!-- Tous les articles -->
+    <div class="section-label">Tous les articles</div>
+    <div class="articles-grid">
+      {articles.map(article => (
+        <a href={`/${article.slug}`} class="article-card">
+          <span
+            class="article-cat"
+            style={`background: ${categoryColors[article.category] || '#0F838F'}`}
+          >
+            {article.category}
+          </span>
+          <h2>{article.title}</h2>
+          <p>{article.description}</p>
+          <div class="article-meta">
+            <span>⏱ {article.readTime}</span>
+            <span class="read-more">Lire →</span>
+          </div>
+        </a>
+      ))}
+    </div>
+
+  </div>
+</Layout>
