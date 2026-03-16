@@ -127,7 +127,13 @@ const formattedDate = new Date(pubDate).toLocaleDateString('fr-FR', {
 
   <article class="article-body">
     <slot />
-
+<div class="practice-block">
+  <p class="practice-label">Mets en pratique</p>
+  <a href="https://exercia.org/exercices/{matiere}" 
+     class="practice-link">
+    → 5 exercices gratuits sur ce thème, sans inscription
+  </a>
+</div>
     <div class="cta-block">
       <h3>Entraîne-toi sur les épreuves du CRPE</h3>
       <p>20 minutes par jour · Exercices ciblés · Adapté à tes lacunes</p>
