@@ -1,35 +1,5 @@
 ---
 import ArticleLayout from '../layouts/ArticleLayout.astro';
-
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "@id": "https://exercia.org/guide-pilier-crpe-en-travaillant#article",
-  "headline": "Préparer le CRPE en travaillant : le guide complet pour les adultes en reconversion",
-  "description": "Tu prépares le CRPE tout en gardant ton emploi ? Méthode, planning et conseils concrets pour les adultes en reconversion qui veulent réussir avec peu de temps.",
-  "url": "https://exercia.org/guide-pilier-crpe-en-travaillant",
-  "inLanguage": "fr-FR",
-  "datePublished": "2025-04-04",
-  "dateModified": "2025-04-04",
-  "author": {
-    "@type": "Organization",
-    "@id": "https://exercia.org/#organization",
-    "name": "Exercia",
-    "url": "https://exercia.org"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "@id": "https://exercia.org/#organization",
-    "name": "Exercia",
-    "url": "https://exercia.org"
-  },
-  "about": [
-    { "@type": "Thing", "name": "CRPE" },
-    { "@type": "Thing", "name": "Reconversion professionnelle enseignement" },
-    { "@type": "Thing", "name": "Préparation concours professeur des écoles" }
-  ],
-  "keywords": "préparer CRPE en travaillant, CRPE reconversion, méthode CRPE adulte, planning révision CRPE, entraînement CRPE quotidien"
-};
 ---
 
 <ArticleLayout
@@ -40,7 +10,6 @@ const jsonLd = {
   readTime="8 min"
   exerciceUrl="/exercices"
   exerciceLabel="Commence par 5 exercices ciblés sur tes lacunes, sans inscription"
-  jsonLd={JSON.stringify(jsonLd)}
 >
 
   <p>Tu prépares le CRPE tout en gardant ton poste. Tu te lèves tôt, tu bosses le soir, tu sacrifies tes week-ends. Et pourtant, tu as l'impression de ne jamais avancer assez vite.</p>

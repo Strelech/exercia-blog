@@ -1,35 +1,5 @@
 ---
 import ArticleLayout from '../layouts/ArticleLayout.astro';
-
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "@id": "https://exercia.org/qu-est-ce-que-le-crpe#article",
-  "headline": "Qu'est-ce que le CRPE ? Concours, épreuves et niveau attendu (2026)",
-  "description": "Le CRPE est le concours de recrutement des professeurs des écoles. Épreuves écrites, oraux, conditions d'inscription, niveau attendu : tout ce qu'il faut savoir avant de se lancer.",
-  "url": "https://exercia.org/qu-est-ce-que-le-crpe",
-  "inLanguage": "fr-FR",
-  "datePublished": "2026-04-05",
-  "dateModified": "2026-04-05",
-  "author": {
-    "@type": "Organization",
-    "@id": "https://exercia.org/#organization",
-    "name": "Exercia",
-    "url": "https://exercia.org"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "@id": "https://exercia.org/#organization",
-    "name": "Exercia",
-    "url": "https://exercia.org"
-  },
-  "about": [
-    { "@type": "Thing", "name": "CRPE" },
-    { "@type": "Thing", "name": "Concours professeur des écoles" },
-    { "@type": "Thing", "name": "Reconversion professionnelle enseignement" }
-  ],
-  "keywords": "CRPE, concours professeur des écoles, épreuves CRPE, admissibilité CRPE, reconversion CRPE, niveau attendu CRPE"
-};
 ---
 
 <ArticleLayout
@@ -40,7 +10,6 @@ const jsonLd = {
   readTime="6 min"
   exerciceUrl="/exercices"
   exerciceLabel="Commence par 5 exercices ciblés sur tes lacunes, sans inscription"
-  jsonLd={JSON.stringify(jsonLd)}
 >
 
   <p>Le CRPE — Concours de Recrutement des Professeurs des Écoles — est le concours national qui permet de devenir enseignant titulaire dans les écoles primaires publiques en France. C'est la voie principale pour enseigner en maternelle et en élémentaire dans le secteur public.</p>
