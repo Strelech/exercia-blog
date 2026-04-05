@@ -9,6 +9,7 @@ export interface Props {
   readTime?: string;
   exerciceUrl?: string;
   exerciceLabel?: string;
+  jsonLd?: string;
 }
 
 const { title, description, pubDate, category = 'CRPE', readTime = '5 min', exerciceUrl, exerciceLabel } = Astro.props;
@@ -138,6 +139,7 @@ const formattedDate = new Date(pubDate).toLocaleDateString('fr-FR', {
   </style>
 
   <a href="/" class="back-link">← Tous les articles</a>
+  {jsonLd && <script type="application/ld+json" set:html={jsonLd} />}
 
   <div class="article-hero">
     <div class="article-category">{category}</div>
