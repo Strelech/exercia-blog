@@ -12,7 +12,7 @@ export interface Props {
   jsonLd?: string;
 }
 
-const { title, description, pubDate, category = 'CRPE', readTime = '5 min', exerciceUrl, exerciceLabel } = Astro.props;
+const { title, description, pubDate, category = 'CRPE', readTime = '5 min', exerciceUrl, exerciceLabel, jsonLd } = Astro.props;
 
 const formattedDate = new Date(pubDate).toLocaleDateString('fr-FR', {
   year: 'numeric', month: 'long', day: 'numeric'
