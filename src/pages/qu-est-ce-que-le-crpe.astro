@@ -1,19 +1,16 @@
 ---
-const title = "Qu'est-ce que le CRPE ? Concours, épreuves et niveau attendu (2026)";
-const description = "Le CRPE est le concours de recrutement des professeurs des écoles. Épreuves écrites, oraux, conditions d'inscription, niveau attendu : tout ce qu'il faut savoir avant de se lancer.";
-const date = "2026-04-05";
-const author = "L'équipe Exercia";
+import ArticleLayout from '../layouts/ArticleLayout.astro';
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Article",
-  "@id": "https://exercia.org/blog/qu-est-ce-que-le-crpe#article",
-  "headline": title,
-  "description": description,
-  "url": "https://exercia.org/blog/qu-est-ce-que-le-crpe",
+  "@id": "https://exercia.org/qu-est-ce-que-le-crpe#article",
+  "headline": "Qu'est-ce que le CRPE ? Concours, épreuves et niveau attendu (2026)",
+  "description": "Le CRPE est le concours de recrutement des professeurs des écoles. Épreuves écrites, oraux, conditions d'inscription, niveau attendu : tout ce qu'il faut savoir avant de se lancer.",
+  "url": "https://exercia.org/qu-est-ce-que-le-crpe",
   "inLanguage": "fr-FR",
-  "datePublished": date,
-  "dateModified": date,
+  "datePublished": "2026-04-05",
+  "dateModified": "2026-04-05",
   "author": {
     "@type": "Organization",
     "@id": "https://exercia.org/#organization",
@@ -35,29 +32,22 @@ const jsonLd = {
 };
 ---
 
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{title}</title>
-  <meta name="description" content={description} />
-  <meta property="og:title" content={title} />
-  <meta property="og:description" content={description} />
-  <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://exercia.org/blog/qu-est-ce-que-le-crpe" />
-  <link rel="canonical" href="https://exercia.org/blog/qu-est-ce-que-le-crpe" />
-  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
-</head>
-<body>
-
-<article>
-
-  <h1>Qu'est-ce que le CRPE ?</h1>
+<ArticleLayout
+  title="Qu'est-ce que le CRPE ? Concours, épreuves et niveau attendu (2026)"
+  description="Le CRPE est le concours de recrutement des professeurs des écoles. Épreuves écrites, oraux, conditions d'inscription, niveau attendu : tout ce qu'il faut savoir avant de se lancer."
+  pubDate="2026-04-05"
+  category="Guide CRPE"
+  readTime="6 min"
+  exerciceUrl="/exercices"
+  exerciceLabel="Commence par 5 exercices ciblés sur tes lacunes, sans inscription"
+  jsonLd={JSON.stringify(jsonLd)}
+>
 
   <p>Le CRPE — Concours de Recrutement des Professeurs des Écoles — est le concours national qui permet de devenir enseignant titulaire dans les écoles primaires publiques en France. C'est la voie principale pour enseigner en maternelle et en élémentaire dans le secteur public.</p>
 
   <p>Il est organisé chaque année par le ministère de l'Éducation nationale, académie par académie. Les candidats s'inscrivent dans l'académie de leur choix et passent les épreuves dans cette académie.</p>
+
+  <hr />
 
   <h2>Qui peut s'inscrire au CRPE ?</h2>
 
@@ -66,6 +56,8 @@ const jsonLd = {
   <p>Il n'y a pas de limite d'âge pour s'inscrire au CRPE. Les candidats en reconversion professionnelle, parfois à 35, 40 ou 45 ans, sont nombreux et représentent une part significative des reçus chaque année.</p>
 
   <p>Des voies aménagées existent pour certains profils : les agents contractuels de l'Éducation nationale ayant une ancienneté suffisante peuvent accéder à un troisième concours spécifique. Les professeurs de lycée professionnel peuvent également bénéficier de conditions particulières.</p>
+
+  <hr />
 
   <h2>La structure du concours</h2>
 
@@ -91,6 +83,8 @@ const jsonLd = {
 
   <p>La note finale est calculée à partir de la moyenne pondérée des résultats aux écrits et aux oraux.</p>
 
+  <hr />
+
   <h2>Le niveau attendu aux épreuves écrites</h2>
 
   <p>C'est le point que la majorité des candidats sous-estiment, particulièrement ceux qui viennent de milieux non scientifiques ou non littéraires.</p>
@@ -105,15 +99,21 @@ const jsonLd = {
 
   <p>Le niveau attendu est celui d'un expert de la langue : orthographe grammaticale et lexicale sans faute, analyse syntaxique précise, compréhension approfondie d'un texte littéraire ou documentaire, qualité de l'expression écrite. La partie didactique demande de connaître les programmes officiels de l'école primaire en français et de comprendre comment les notions linguistiques s'enseignent à des enfants de 6 à 11 ans.</p>
 
+  <hr />
+
   <h2>Ce que le CRPE n'est pas</h2>
 
   <p>Le CRPE n'est pas un concours de culture générale. Il n'évalue pas la capacité à mémoriser des connaissances encyclopédiques. Il n'est pas réservé aux personnes ayant suivi une formation en éducation. Un diplôme de master en biochimie, en gestion ou en droit est suffisant pour s'inscrire.</p>
 
   <p>Le CRPE n'est pas non plus une simple formalité pour les titulaires d'un bac+5. Le taux d'admissibilité oscille généralement entre 30 et 50 % des inscrits selon les académies et les sessions.</p>
 
+  <hr />
+
   <h2>Après le concours</h2>
 
   <p>Les candidats admis intègrent l'Éducation nationale comme fonctionnaires stagiaires. La première année est une année de stage rémunérée, partagée entre formation à l'INSPE et exercice en classe avec un tuteur. À l'issue du stage, une commission valide la titularisation. La rémunération en tant que stagiaire correspond à environ 2 000 euros nets par mois selon les académies.</p>
+
+  <hr />
 
   <h2>Comment préparer le CRPE efficacement</h2>
 
@@ -123,7 +123,4 @@ const jsonLd = {
 
   <p>Exercia est conçu pour ce type de préparation : des sessions courtes, adaptées au niveau réel de l'utilisateur, couvrant les quatre matières des épreuves écrites. L'accès est gratuit sur <a href="https://exercia.org">exercia.org</a>.</p>
 
-</article>
-
-</body>
-</html>
+</ArticleLayout>
