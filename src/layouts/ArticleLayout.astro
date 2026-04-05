@@ -9,14 +9,35 @@ export interface Props {
   readTime?: string;
   exerciceUrl?: string;
   exerciceLabel?: string;
-  jsonLd?: string;
 }
 
-const { title, description, pubDate, category = 'CRPE', readTime = '5 min', exerciceUrl, exerciceLabel, jsonLd } = Astro.props;
+const { title, description, pubDate, category = 'CRPE', readTime = '5 min', exerciceUrl, exerciceLabel } = Astro.props;
 
 const formattedDate = new Date(pubDate).toLocaleDateString('fr-FR', {
   year: 'numeric', month: 'long', day: 'numeric'
 });
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "datePublished": pubDate,
+  "dateModified": pubDate,
+  "inLanguage": "fr-FR",
+  "author": {
+    "@type": "Organization",
+    "@id": "https://exercia.org/#organization",
+    "name": "Exercia",
+    "url": "https://exercia.org"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://exercia.org/#organization",
+    "name": "Exercia",
+    "url": "https://exercia.org"
+  }
+};
 ---
 
 <Layout title={`${title} | Exercia Blog`} description={description} pubDate={pubDate} isArticle={true}>
@@ -138,8 +159,9 @@ const formattedDate = new Date(pubDate).toLocaleDateString('fr-FR', {
     .back-link:hover { text-decoration: underline; }
   </style>
 
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
   <a href="/" class="back-link">← Tous les articles</a>
-  {jsonLd && <script type="application/ld+json" set:html={jsonLd} />}
 
   <div class="article-hero">
     <div class="article-category">{category}</div>
