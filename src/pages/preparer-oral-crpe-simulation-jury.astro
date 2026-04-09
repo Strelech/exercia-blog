@@ -1,100 +1,18 @@
 ---
-// src/pages/blog/preparer-oral-crpe-simulation-jury.astro
-//
-// SITEMAP
-// URL canonique  : https://exercia.org/blog/preparer-oral-crpe-simulation-jury
-// Slug           : preparer-oral-crpe-simulation-jury
-// Priorité       : 0.8
-// changefreq     : monthly
-// lastmod        : 2026-04-08
-//
-// PAGE LAYOUT
-// Layout parent  : src/layouts/BlogLayout.astro  (à créer si inexistant)
-// Slot attendu   : <slot /> dans le layout pour injecter le contenu
-// Frontmatter transmis au layout via props : title, description, publishedAt, tag, readingTime
-//
-// INTÉGRATION SITEMAP (si tu utilises @astrojs/sitemap)
-// Dans astro.config.mjs, vérifie que site: 'https://exercia.org' est défini
-// Le plugin @astrojs/sitemap détecte automatiquement cette page si elle est dans src/pages/
-// Si tu gères le sitemap manuellement, ajoute l'entrée ci-dessous :
-//
-//   <url>
-//     <loc>https://exercia.org/blog/preparer-oral-crpe-simulation-jury</loc>
-//     <lastmod>2026-04-08</lastmod>
-//     <changefreq>monthly</changefreq>
-//     <priority>0.8</priority>
-//   </url>
-
-import BlogLayout from '../../layouts/BlogLayout.astro';
-
-const meta = {
-  title: "Préparer l'oral du CRPE : simuler le jury avec l'IA | Exercia",
-  description: "Comment préparer l'épreuve de leçon et l'entretien jury du CRPE 2026 ? Exercia propose une simulation d'oral avec jury IA pour t'entraîner avant les épreuves de mai-juin.",
-  canonicalUrl: "https://exercia.org/blog/preparer-oral-crpe-simulation-jury",
-  publishedAt: "2026-04-08",
-  tag: "Préparation orale CRPE 2026",
-  readingTime: "6 min",
-  audience: "Admissibles CRPE 2026",
-};
-
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Préparer l'oral du CRPE : simuler le jury avec l'IA",
-  "description": meta.description,
-  "author": {
-    "@type": "Organization",
-    "name": "Exercia",
-    "url": "https://exercia.org"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Exercia",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://exercia.org/logo.png"
-    }
-  },
-  "datePublished": meta.publishedAt,
-  "dateModified": meta.publishedAt,
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": meta.canonicalUrl
-  }
-};
+import ArticleLayout from '../layouts/ArticleLayout.astro';
 ---
 
-<BlogLayout
-  title={meta.title}
-  description={meta.description}
-  canonicalUrl={meta.canonicalUrl}
-  publishedAt={meta.publishedAt}
+<ArticleLayout
+  title="Préparer l'oral du CRPE : simuler le jury avec l'IA"
+  description="Comment préparer l'épreuve de leçon et l'entretien jury du CRPE 2026 ? Exercia propose une simulation d'oral avec jury IA pour s'entraîner avant les épreuves de mai-juin."
+  pubDate="2026-04-08"
+  category="Oraux CRPE 2026"
+  readTime="6 min"
+  exerciceUrl="/oral"
+  exerciceLabel="Simuler mon oral CRPE gratuitement"
 >
 
-  <!-- JSON-LD injecté dans le <head> via slot ou script tag -->
-  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} slot="head" />
-
-  <!-- ============================================================
-       CONTENU ARTICLE
-       ============================================================ -->
-
-  <header class="article-header">
-    <span class="tag">{meta.tag}</span>
-    <h1>
-      Préparer l'oral du CRPE :<br />
-      <em>simuler le jury</em> pour ne pas improviser
-    </h1>
-    <div class="article-meta">
-      <span>📅 Avril 2026</span>
-      <span>⏱ {meta.readingTime} de lecture</span>
-      <span>🎯 {meta.audience}</span>
-    </div>
-    <div class="intro-box">
-      Les écrits sont passés. Les résultats d'admissibilité tombent fin avril. Les oraux débutent mi-mai. Tu as entre 3 et 6 semaines. Voilà comment les utiliser.
-    </div>
-  </header>
-
-  <p>L'oral du CRPE est l'épreuve que la majorité des candidats sous-préparent. Pas par manque de volonté — mais parce que s'entraîner à l'oral sans interlocuteur, c'est difficile. On lit des sujets, on imagine les questions du jury, on répète dans sa tête. Et le jour J, on découvre que le jury ne ressemble pas à ce qu'on avait imaginé.</p>
+  <p>L'oral du CRPE est l'épreuve que la majorité des candidats sous-préparent. Pas par manque de volonté — mais parce que s'entraîner à l'oral sans interlocuteur, c'est difficile. On lit des sujets, on imagine les questions du jury, on répète dans sa tête. Et le jour J, on découvre que le jury ne ressemble pas à ce qu'on avait prévu.</p>
 
   <p>Ce guide couvre les deux épreuves orales du CRPE 2026, leur logique, et comment s'y préparer concrètement — y compris avec les outils qui n'existaient pas encore l'année dernière.</p>
 
@@ -106,25 +24,21 @@ const jsonLd = {
 
   <h3>L'épreuve de leçon (coeff. 4 — bac+5 / coeff. 5 — bac+3)</h3>
 
-  <p>Le jury te soumet un sujet de leçon situé dans l'année scolaire et dans le cursus des élèves — par exemple : <em>"Construis une séance sur la division euclidienne, CM1, début de séquence."</em></p>
+  <p>Le jury te soumet un sujet de leçon situé dans l'année scolaire et dans le cursus des élèves — par exemple : <em>"Construis une séance sur la division euclidienne, CM1, début de séquence."</em> Tu disposes de 30 minutes de préparation, puis tu présentes ta leçon pendant 10 à 15 minutes, suivie d'un entretien avec le jury.</p>
 
-  <p>Tu disposes de 30 minutes de préparation. Puis tu présentes ta leçon pendant 10 à 15 minutes, suivie d'un entretien avec le jury sur le reste du temps alloué.</p>
-
-  <div class="callout">
-    <div class="callout-title">Ce que le jury observe</div>
-    <ul class="checklist">
-      <li><span class="check-icon" aria-hidden="true"></span>La maîtrise disciplinaire — tes notions sont-elles exactes ?</li>
-      <li><span class="check-icon" aria-hidden="true"></span>La structuration pédagogique — ta séance a-t-elle une progression logique ?</li>
-      <li><span class="check-icon" aria-hidden="true"></span>L'adaptation au niveau — les activités sont-elles réalistes pour ce niveau d'élèves ?</li>
-      <li><span class="check-icon" aria-hidden="true"></span>La justification de tes choix — tu expliques pourquoi, pas seulement quoi.</li>
-    </ul>
-  </div>
+  <p>Ce que le jury observe :</p>
+  <ul>
+    <li><strong>Maîtrise disciplinaire</strong> — tes notions sont-elles exactes ?</li>
+    <li><strong>Structuration pédagogique</strong> — ta séance a-t-elle une progression logique ?</li>
+    <li><strong>Adaptation au niveau</strong> — les activités sont-elles réalistes pour ce niveau d'élèves ?</li>
+    <li><strong>Justification des choix</strong> — tu expliques pourquoi, pas seulement quoi.</li>
+  </ul>
 
   <h3>L'entretien jury (coeff. 3)</h3>
 
   <p>L'épreuve se déroule en deux parties. La première porte sur l'EPS — souvent négligée, pourtant notée. La seconde est l'entretien de motivation et de mise en situation professionnelle.</p>
 
-  <p>Tu commences par 5 minutes de présentation de ton parcours. Puis le jury engage un échange sur ta motivation, avant de te soumettre une mise en situation professionnelle : un conflit en classe, une demande difficile d'un parent, un élève en difficulté. La question n'attend pas une réponse parfaite — elle attend une réponse professionnelle, structurée, ancrée dans les valeurs de l'école républicaine.</p>
+  <p>Tu commences par 5 minutes de présentation de ton parcours. Puis le jury engage un échange sur ta motivation, avant de te soumettre une mise en situation professionnelle : un conflit en classe, une demande difficile d'un parent, un élève en difficulté.</p>
 
   <blockquote>
     "La question contextualisée n'appelle pas une réponse pratique, mais permet au candidat de mettre en évidence l'identification et la compréhension qu'il a des enjeux présents dans une situation donnée." — Texte officiel du concours
@@ -136,123 +50,49 @@ const jsonLd = {
 
   <p>Se préparer à l'oral seul, c'est un peu comme préparer un entretien d'embauche en lisant des réponses-types sans jamais parler à quelqu'un. La forme compte autant que le fond. Et la forme ne s'acquiert que par la répétition en conditions réelles.</p>
 
-  <div class="table-wrap">
-    <table>
-      <thead>
-        <tr>
-          <th>Méthode</th>
-          <th>Ce que ça développe</th>
-          <th>Limite</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Lire des sujets corrigés</td>
-          <td>Comprendre le format, les attendus</td>
-          <td>Passif — pas d'interaction</td>
-        </tr>
-        <tr>
-          <td>S'entraîner avec un pair candidat</td>
-          <td>Prise de parole, gestion du stress</td>
-          <td>Feedback non expert, disponibilité</td>
-        </tr>
-        <tr>
-          <td>Simulation avec formateur</td>
-          <td>Feedback expert, conditions réelles</td>
-          <td>Coût, accessibilité, fréquence limitée</td>
-        </tr>
-        <tr>
-          <td><strong>Simulation jury IA (Exercia)</strong></td>
-          <td><strong>Interaction réelle, feedback structuré</strong></td>
-          <td>Ne remplace pas l'évaluation de la voix</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <ul>
+    <li><strong>Lire des sujets corrigés</strong> — utile pour comprendre les attendus, mais passif : aucune interaction.</li>
+    <li><strong>S'entraîner avec un pair candidat</strong> — prise de parole réelle, mais feedback non expert et disponibilité limitée.</li>
+    <li><strong>Simulation avec formateur</strong> — feedback expert et conditions réelles, mais coût élevé et fréquence limitée.</li>
+    <li><strong>Simulation jury IA (Exercia)</strong> — interaction réelle, feedback structuré, disponible à volonté. Ne remplace pas l'évaluation de la voix.</li>
+  </ul>
 
   <h2>Comment fonctionne la simulation jury Exercia</h2>
 
   <p>Exercia propose un module d'entraînement à l'oral dans lequel une IA joue le rôle du jury. Ce n'est pas un quiz ni un corrigé statique — c'est une simulation interactive, avec des questions de relance adaptées à tes réponses.</p>
 
-  <div class="feature-grid">
-    <div class="feature-card">
-      <div class="emoji">📐</div>
-      <h4>Leçon Maths</h4>
-      <p>Sujet situé, chrono 30 min, questions jury sur tes choix pédagogiques</p>
-    </div>
-    <div class="feature-card">
-      <div class="emoji">📖</div>
-      <h4>Leçon Français</h4>
-      <p>De la fluence en lecture au participe passé — tous niveaux couverts</p>
-    </div>
-    <div class="feature-card">
-      <div class="emoji">🎤</div>
-      <h4>Entretien jury</h4>
-      <p>Présentation motivation + valeurs République + mise en situation pro</p>
-    </div>
-    <div class="feature-card">
-      <div class="emoji">📊</div>
-      <h4>Feedback immédiat</h4>
-      <p>Points forts, axes d'amélioration, note indicative sur 20</p>
-    </div>
-  </div>
+  <p>Trois épreuves disponibles :</p>
+  <ul>
+    <li><strong>Leçon Maths</strong> — sujet situé, chrono 30 min, questions jury sur tes choix pédagogiques</li>
+    <li><strong>Leçon Français</strong> — de la fluence en lecture au participe passé, tous niveaux couverts</li>
+    <li><strong>Entretien jury</strong> — présentation motivation + valeurs de la République + mise en situation professionnelle</li>
+  </ul>
 
-  <p>Le flux est simple : tu choisis ton épreuve, tu lis ton sujet, tu prépares ta réponse (avec un chrono pour te mettre en conditions), puis le jury IA prend le relais — il pose ses questions une par une, attend tes réponses, creuse les points qu'il juge utiles. À la fin, tu reçois un feedback structuré : ce qui tient, ce qui ne tient pas, et comment améliorer.</p>
+  <p>Le flux est simple : tu choisis ton épreuve, tu lis ton sujet, tu prépares ta réponse avec un chrono, puis le jury IA prend le relais. Il pose ses questions une par une, attend tes réponses, creuse les points qu'il juge utiles. À la fin, tu reçois un feedback structuré : points forts, axes d'amélioration, note indicative sur 20.</p>
 
-  <h2>Plan d'entraînement sur 4 semaines (jusqu'aux oraux)</h2>
+  <h2>Plan d'entraînement sur 4 semaines</h2>
 
-  <div class="table-wrap">
-    <table>
-      <thead>
-        <tr>
-          <th>Semaine</th>
-          <th>Focus</th>
-          <th>Volume</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>S1 — 14 avril</strong></td>
-          <td>Leçon Maths : 3 sujets différents. Repérer ses angles morts disciplinaires.</td>
-          <td>3 simulations</td>
-        </tr>
-        <tr>
-          <td><strong>S2 — 21 avril</strong></td>
-          <td>Leçon Français : 3 sujets. Travailler la structuration pédagogique.</td>
-          <td>3 simulations</td>
-        </tr>
-        <tr>
-          <td><strong>S3 — 28 avril</strong></td>
-          <td>Entretien jury : 2 passages complets (motivation + MSP). Enregistre-toi en parallèle.</td>
-          <td>2 simulations</td>
-        </tr>
-        <tr>
-          <td><strong>S4 — 5 mai</strong></td>
-          <td>Simulation conditions réelles : chrono strict, pas de corrections entre les deux épreuves.</td>
-          <td>1 passage complet</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <p>Les oraux débutent mi-mai selon les académies. Si tu es admissible, voilà comment utiliser les semaines qui viennent :</p>
+
+  <ul>
+    <li><strong>Semaine 1 (14 avril)</strong> — Leçon Maths : 3 sujets différents. Repérer ses angles morts disciplinaires.</li>
+    <li><strong>Semaine 2 (21 avril)</strong> — Leçon Français : 3 sujets. Travailler la structuration pédagogique.</li>
+    <li><strong>Semaine 3 (28 avril)</strong> — Entretien jury : 2 passages complets (motivation + MSP). S'enregistrer en parallèle.</li>
+    <li><strong>Semaine 4 (5 mai)</strong> — Simulation conditions réelles : chrono strict, enchaîner les deux épreuves sans pause.</li>
+  </ul>
 
   <h2>Ce que la simulation ne remplace pas</h2>
 
-  <p>Soyons directs : une simulation textuelle ne peut pas évaluer ta voix, ton regard, ta posture ou ta gestion du stress physique face à un jury en chair et en os. Si tu as accès à un formateur ou à un groupe de pairs candidats pour faire une vraie simulation orale, fais-le — surtout en semaine 4.</p>
+  <p>Une simulation textuelle ne peut pas évaluer ta voix, ton regard, ta posture ou ta gestion du stress physique face à un jury en chair et en os. Si tu as accès à un formateur ou à un groupe de pairs candidats pour une vraie simulation orale, fais-le — surtout en semaine 4.</p>
 
   <p>Ce que la simulation IA fait bien : t'obliger à structurer ta pensée, à justifier tes choix, à répondre à des questions que tu n'avais pas anticipées. C'est exactement ce qui manque quand on se prépare seul.</p>
-
-  <div class="cta-block">
-    <h2>Commence ta première simulation maintenant</h2>
-    <p>Le module est disponible gratuitement pendant la période des oraux. Aucune inscription requise pour le premier essai.</p>
-    <a class="cta-btn" href="/oral">Simuler mon oral CRPE →</a>
-  </div>
 
   <hr />
 
   <h2>Questions fréquentes</h2>
 
   <h3>Les sujets sont-ils proches des vrais sujets de concours ?</h3>
-  <p>Ils sont construits selon les critères officiels des rapports de jury CRPE et situés dans les programmes en vigueur. Ils ne reproduisent pas de sujets réels — les sujets oraux étant détruits à l'issue des épreuves — mais leur logique et leur niveau correspondent aux attendus du concours.</p>
+  <p>Ils sont construits selon les critères officiels des rapports de jury CRPE et situés dans les programmes en vigueur. Les sujets oraux étant détruits à l'issue des épreuves, aucun outil ne peut les reproduire — mais la logique et le niveau correspondent aux attendus du concours.</p>
 
   <h3>Combien de fois puis-je refaire une simulation ?</h3>
   <p>Autant de fois que nécessaire. Chaque passage tire un sujet différent depuis la banque de sujets. Le feedback est généré à chaque fois.</p>
@@ -260,250 +100,4 @@ const jsonLd = {
   <h3>La simulation fonctionne-t-elle pour le bac+3 et le bac+5 ?</h3>
   <p>Oui. Les épreuves de leçon ont la même logique dans les deux voies. L'entretien jury est identique. Seuls les coefficients diffèrent.</p>
 
-</BlogLayout>
-
-<style>
-  /* ============================================================
-     Ces styles peuvent aller dans BlogLayout.astro si tu préfères
-     un CSS global pour tous les articles. Sinon ils restent ici
-     en scoped (comportement par défaut d'Astro).
-     ============================================================ */
-
-  :root {
-    --teal: #0F838F;
-    --teal-dark: #0a6570;
-    --teal-light: #e8f5f6;
-    --yellow: #EAC435;
-    --yellow-light: #fdf7e0;
-    --text: #1a1a2e;
-    --text-muted: #5a5a7a;
-    --border: #e8e8f0;
-    --bg-alt: #f8f9fc;
-  }
-
-  /* HEADER */
-  .article-header { margin-bottom: 2.5rem; }
-
-  .tag {
-    display: inline-block;
-    background: var(--teal-light);
-    color: var(--teal);
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 0.35rem 0.9rem;
-    border-radius: 100px;
-    margin-bottom: 1.25rem;
-  }
-
-  h1 {
-    font-size: clamp(1.75rem, 4vw, 2.5rem);
-    font-weight: 800;
-    line-height: 1.2;
-    letter-spacing: -0.03em;
-    margin-bottom: 1.25rem;
-  }
-
-  h1 em {
-    font-style: normal;
-    color: var(--teal);
-  }
-
-  .article-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.25rem;
-    font-size: 0.875rem;
-    color: var(--text-muted);
-    margin-bottom: 1.75rem;
-  }
-
-  .intro-box {
-    background: var(--yellow-light);
-    border-left: 3px solid var(--yellow);
-    padding: 1.25rem 1.5rem;
-    border-radius: 0 10px 10px 0;
-    font-size: 1.05rem;
-    font-weight: 500;
-  }
-
-  /* TYPOGRAPHY */
-  h2 {
-    font-size: 1.4rem;
-    font-weight: 800;
-    letter-spacing: -0.02em;
-    margin: 2.5rem 0 1rem;
-  }
-
-  h3 {
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin: 2rem 0 0.75rem;
-    color: var(--teal-dark);
-  }
-
-  p { margin-bottom: 1.1rem; }
-
-  blockquote {
-    border-left: 4px solid var(--yellow);
-    padding: 1rem 1.5rem;
-    margin: 1.5rem 0;
-    background: var(--yellow-light);
-    border-radius: 0 8px 8px 0;
-    font-style: italic;
-    font-size: 1.05rem;
-    font-weight: 500;
-  }
-
-  hr {
-    border: none;
-    border-top: 1px solid var(--border);
-    margin: 2.5rem 0;
-  }
-
-  /* CALLOUT */
-  .callout {
-    background: var(--teal-light);
-    border-radius: 12px;
-    padding: 1.5rem;
-    margin: 2rem 0;
-  }
-
-  .callout-title {
-    font-weight: 800;
-    font-size: 0.875rem;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: var(--teal);
-    margin-bottom: 0.75rem;
-  }
-
-  .checklist {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .checklist li {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.75rem;
-    padding: 0.5rem 0;
-    border-bottom: 1px solid rgba(15, 131, 143, 0.15);
-    font-size: 0.95rem;
-  }
-
-  .checklist li:last-child { border-bottom: none; }
-
-  .check-icon {
-    width: 20px;
-    height: 20px;
-    background: var(--teal);
-    border-radius: 50%;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 2px;
-  }
-
-  .check-icon::after {
-    content: '✓';
-    color: white;
-    font-size: 11px;
-    font-weight: 800;
-  }
-
-  /* TABLE */
-  .table-wrap {
-    overflow-x: auto;
-    margin: 1.5rem 0;
-    border-radius: 10px;
-    border: 1px solid var(--border);
-  }
-
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.9rem;
-  }
-
-  th {
-    background: var(--teal);
-    color: white;
-    padding: 0.75rem 1rem;
-    text-align: left;
-    font-weight: 700;
-  }
-
-  td {
-    padding: 0.75rem 1rem;
-    border-bottom: 1px solid var(--border);
-    vertical-align: top;
-  }
-
-  tr:last-child td { border-bottom: none; }
-  tr:nth-child(even) td { background: var(--bg-alt); }
-
-  /* FEATURE GRID */
-  .feature-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 1rem;
-    margin: 1.5rem 0;
-  }
-
-  .feature-card {
-    background: var(--bg-alt);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 1.25rem;
-  }
-
-  .feature-card .emoji { font-size: 1.5rem; margin-bottom: 0.75rem; display: block; }
-  .feature-card h4 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.4rem; }
-  .feature-card p { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0; }
-
-  /* CTA */
-  .cta-block {
-    background: var(--teal);
-    border-radius: 16px;
-    padding: 2.5rem;
-    text-align: center;
-    margin: 3rem 0;
-  }
-
-  .cta-block h2 {
-    color: white;
-    margin-top: 0;
-    font-size: 1.5rem;
-  }
-
-  .cta-block p {
-    color: rgba(255, 255, 255, 0.85);
-    margin-bottom: 1.5rem;
-  }
-
-  .cta-btn {
-    display: inline-block;
-    background: var(--yellow);
-    color: var(--text);
-    font-weight: 800;
-    font-size: 1rem;
-    padding: 0.9rem 2rem;
-    border-radius: 10px;
-    text-decoration: none;
-    transition: transform 0.15s, box-shadow 0.15s;
-  }
-
-  .cta-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-  }
-
-  @media (max-width: 600px) {
-    .feature-grid { grid-template-columns: 1fr 1fr; }
-    .cta-block { padding: 1.75rem 1.25rem; }
-  }
-</style>
+</ArticleLayout>
