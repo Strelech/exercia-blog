@@ -1,74 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://blog.exercia.org/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://blog.exercia.org/reforme-crpe-2026-bac3</loc>
-    <lastmod>2026-03-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://blog.exercia.org/preparer-oral-crpe-simulation-jury</loc>
-    <lastmod>2026-04-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://blog.exercia.org/preparer-crpe-reconversion-3-mois</loc>
-    <lastmod>2026-03-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://blog.exercia.org/exercices-maths-crpe-themes-les-plus-tombes</loc>
-    <lastmod>2026-03-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://blog.exercia.org/crpe-francais-fautes-orthographe</loc>
-    <lastmod>2026-03-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://blog.exercia.org/crpe-reconversion-guide-complet</loc>
-    <lastmod>2026-04-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://blog.exercia.org/guide-pilier-crpe-en-travaillant</loc>
-    <lastmod>2026-04-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://blog.exercia.org/qu-est-ce-que-le-crpe</loc>
-    <lastmod>2026-04-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://blog.exercia.org/crpe-epreuve-application-choisir-discipline</loc>
-    <lastmod>2026-03-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://blog.exercia.org/crpe-epreuve-application-arts-plastiques</loc>
-    <lastmod>2026-03-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://blog.exercia.org/ressources-crpe-2026-comparatif</loc>
-    <lastmod>2026-04-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+<url>
+<loc>https://blog.exercia.org/</loc>
+<changefreq>weekly</changefreq>
+<priority>1.0</priority>
+</url>
+<url>
+<loc>https://blog.exercia.org/reforme-crpe-2026-bac3</loc>
+<lastmod>2026-03-12</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://blog.exercia.org/preparer-oral-crpe-simulation-jury</loc>
+<lastmod>2026-04-14</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://blog.exercia.org/preparer-crpe-reconversion-3-mois</loc>
+<lastmod>2026-03-12</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://blog.exercia.org/exercices-maths-crpe-themes-les-plus-tombes</loc>
+<lastmod>2026-03-12</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://blog.exercia.org/crpe-francais-fautes-orthographe</loc>
+<lastmod>2026-03-12</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://blog.exercia.org/crpe-reconversion-guide-complet</loc>
+<lastmod>2026-04-05</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://blog.exercia.org/guide-pilier-crpe-en-travaillant</loc>
+<lastmod>2026-04-05</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://blog.exercia.org/qu-est-ce-que-le-crpe</loc>
+<lastmod>2026-04-05</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://blog.exercia.org/crpe-epreuve-application-choisir-discipline</loc>
+<lastmod>2026-03-12</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://blog.exercia.org/crpe-epreuve-application-arts-plastiques</loc>
+<lastmod>2026-03-12</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://blog.exercia.org/ressources-crpe-2026-comparatif</loc>
+<lastmod>2026-04-05</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
 </urlset>
