@@ -1,0 +1,296 @@
+---
+import ArticleLayout from '../layouts/ArticleLayout.astro';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Combien de temps faut-il pour préparer le CRPE ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tout dépend de ton niveau de départ et du temps disponible. Avec 6 mois à 1 an de préparation régulière, la plupart des candidats atteignent le niveau requis. 3 mois est possible si le niveau en maths et en français est déjà solide. L'essentiel n'est pas la durée totale mais la régularité : 20 à 30 minutes par jour, maintenues dans la durée, sont plus efficaces qu'une révision intensive et irrégulière. Exercia propose des sessions quotidiennes courtes adaptées à ce rythme."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quelles matières sont au programme du CRPE ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Les épreuves écrites d'admissibilité portent sur deux matières : le français (compréhension et analyse de textes, grammaire, orthographe, vocabulaire, didactique) et les mathématiques (résolution de problèmes, géométrie, arithmétique, grandeurs et mesures, didactique). Chaque épreuve dure 4 heures et est notée sur 20. Les oraux portent sur d'autres domaines (sciences, histoire-géographie, éducation physique, etc.), mais l'admissibilité se joue entièrement sur les deux écrits."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment préparer le CRPE quand on travaille à temps plein ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La clé est de remplacer des sessions longues et irrégulières par une routine quotidienne courte. 20 à 30 minutes par jour, ciblées sur ses vraies lacunes, suffisent si le travail est précis. Il faut identifier ce qui coûte des points (souvent les maths pour les profils en reconversion) et concentrer l'effort là-dessus. Exercia est conçu spécifiquement pour ce profil : sessions adaptatives courtes, calibrées sur les lacunes réelles de chaque candidat."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quel est le niveau attendu en maths au CRPE ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Le CRPE évalue des compétences de collège-lycée en mathématiques, mais dans un contexte didactique : savoir résoudre un problème et comprendre comment l'enseigner à des élèves de primaire. Les notions clés sont la numération et les opérations, les fractions, la géométrie, les grandeurs et mesures, les proportions et les probabilités. Le niveau n'est pas celui d'un bac scientifique, mais il exige de la rigueur et une bonne capacité à raisonner en temps limité. C'est souvent là que tout se joue, y compris pour des candidats avec un bon niveau général."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment s'entraîner efficacement pour le CRPE ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "L'entraînement efficace repose sur trois principes : la régularité (réviser tous les jours, même 15 minutes, vaut mieux que des marathons hebdomadaires), le ciblage (travailler sur ses lacunes réelles, pas sur ce qu'on sait déjà), et le feedback immédiat (savoir tout de suite si on a juste ou faux, et comprendre pourquoi). Faire des exercices sur des sujets réels de CRPE est plus efficace que lire des cours. Plus on s'entraîne sur des annales et des exercices type concours, plus on se familiarise avec la logique du jury."
+      }
+    }
+  ]
+};
+---
+
+<ArticleLayout
+  title="Préparer le CRPE : méthode, planning et erreurs à éviter"
+  description="Comment préparer le CRPE efficacement selon ton profil et le temps disponible. Méthode, planning et erreurs fréquentes : le guide complet pour réussir le concours."
+  pubDate="2026-05-17"
+  category="Méthode"
+  readTime="8 min"
+  exerciceUrl="https://exercia.org/diagnostic"
+  exerciceLabel="Faire mon diagnostic de niveau gratuit"
+>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+
+  <p>
+    Préparer le CRPE, c'est souvent commencer sans savoir par où. Tu as un diplôme, une motivation,
+    un calendrier qui se resserre — et face à toi, des annales empilées et la question qui revient :
+    <em>est-ce que je m'y prends bien ?</em> Ce guide répond à cette question. Pas de promesse irréaliste,
+    pas de méthode magique. Ce qui fonctionne vraiment, selon les profils, avec les contraintes réelles
+    d'un adulte qui prépare le concours en parallèle d'une vie.
+  </p>
+
+  <h2>Ce que le CRPE évalue vraiment</h2>
+
+  <p>
+    Avant de travailler, il faut savoir ce qu'on te demande. Le CRPE n'est pas un concours de culture
+    générale. Il évalue deux compétences précises dans les épreuves d'admissibilité : la maîtrise du
+    français et des mathématiques au niveau attendu d'un professeur des écoles, plus ta capacité à
+    penser leur enseignement à des élèves du primaire.
+  </p>
+
+  <p>Deux épreuves écrites de 4 heures chacune, notées sur 20 :</p>
+  <ul>
+    <li>
+      <strong>Épreuve de français</strong> — compréhension et analyse de texte, grammaire, orthographe,
+      vocabulaire, didactique du français à l'école primaire.
+    </li>
+    <li>
+      <strong>Épreuve de mathématiques</strong> — résolution de problèmes, géométrie, arithmétique,
+      grandeurs et mesures, didactique des maths à l'école.
+    </li>
+  </ul>
+
+  <p>
+    Ces deux épreuves déterminent l'admissibilité. Ce sont elles qui sélectionnent. Les oraux viennent
+    après, pour les admissibles seulement.
+  </p>
+
+  <p>
+    → <a href="/qu-est-ce-que-le-crpe">Tout comprendre sur le CRPE : épreuves, niveau attendu et conditions d'accès</a>
+  </p>
+
+  <h2>Quel est ton profil de candidat ?</h2>
+
+  <p>
+    La méthode de préparation dépend d'où tu pars. Trois situations principales, trois approches
+    différentes.
+  </p>
+
+  <h3>Tu es en reconversion professionnelle</h3>
+
+  <p>
+    C'est le profil le plus courant parmi les candidats au CRPE. Tu travailles, tu as peu de temps
+    disponible, et tu n'as pas révisé des maths depuis dix à vingt ans. Tu dois reconstruire des bases
+    — pas tout réapprendre, mais reprendre des notions laissées de côté depuis longtemps.
+  </p>
+
+  <p>
+    Ce qu'il te faut : un entraînement court, régulier, ciblé sur les lacunes réelles. Pas des cours
+    magistraux. Des exercices. 20 à 30 minutes par jour, maintenus sur plusieurs mois, produisent de
+    meilleurs résultats que trois heures le week-end.
+  </p>
+
+  <p>
+    → <a href="/guide-pilier-crpe-en-travaillant">Préparer le CRPE en travaillant : organisation et méthode</a>
+  </p>
+
+  <h3>Tu repasses le concours après un échec</h3>
+
+  <p>
+    Tu connais déjà le format. Ce qui t'a manqué, c'est probablement la régularité, ou une méthode
+    insuffisamment ciblée sur certaines notions. Reprendre de zéro serait une erreur de temps.
+  </p>
+
+  <p>
+    Ce qu'il te faut : un diagnostic honnête de tes lacunes réelles — ta note par épreuve, les types
+    d'exercices ratés — puis un travail ciblé sur ces points précis. Pas de révision générale.
+  </p>
+
+  <h3>Tu es étudiant(e) en MEEF</h3>
+
+  <p>
+    Tu as du temps mais tu es tenté(e) de tout faire en même temps. Le risque : t'éparpiller entre
+    les cours, les stages et la prépa concours. Ce qu'il te faut, c'est combiner une base de cours
+    solide côté théorie avec un entraînement régulier sur des exercices de type concours.
+    La connaissance ne suffit pas — il faut savoir la mobiliser en temps limité.
+  </p>
+
+  <h2>Combien de temps faut-il pour préparer le CRPE ?</h2>
+
+  <p>
+    Il n'y a pas de réponse universelle — mais il y a des repères réalistes selon le temps disponible.
+  </p>
+
+  <h3>Moins de 3 mois</h3>
+
+  <p>
+    C'est faisable uniquement si le niveau de départ est déjà solide en maths et en français, et si
+    tu peux dégager 1h30 à 2h par jour. L'approche : travailler exclusivement sur des exercices type
+    concours et des annales complètes, sans remise à niveau générale. Sprint ciblé, pas révision
+    généraliste.
+  </p>
+
+  <h3>De 3 à 6 mois</h3>
+
+  <p>
+    Le créneau le plus courant pour un candidat sérieux. Temps suffisant pour combler des lacunes
+    moyennes, s'entraîner sur des annales complètes, et identifier ce qui reste fragile avant les
+    épreuves. La régularité quotidienne est indispensable — pas le volume.
+  </p>
+
+  <h3>6 mois à 1 an</h3>
+
+  <p>
+    Le confort optimal pour une reconversion professionnelle. Temps suffisant pour reconstruire des
+    bases solides en maths, créer une habitude d'entraînement qui tient dans la durée, et arriver
+    aux épreuves sans précipitation. C'est aussi l'horizon de la plupart des candidats qui
+    commencent leur préparation à la rentrée de septembre.
+  </p>
+
+  <p>
+    → <a href="/preparer-crpe-2027">Préparer le CRPE 2027 : méthode et planning sur un an</a>
+  </p>
+
+  <h2>Les 3 principes d'une préparation efficace</h2>
+
+  <p>Ces trois principes s'appliquent quel que soit ton profil, ton niveau de départ ou ton calendrier.</p>
+
+  <h3>1. La régularité prime sur l'intensité</h3>
+
+  <p>
+    C'est le principe le plus contre-intuitif — et le plus décisif. La mémoire fonctionne par
+    répétition espacée : revoir une notion juste avant de l'oublier la consolide durablement.
+    Une session de 20 minutes tous les jours crée cet effet. Une session de 3 heures une fois
+    par semaine, non.
+  </p>
+
+  <p>
+    10 minutes par jour pendant 6 mois valent mieux que 3 heures par jour pendant 3 semaines.
+    Ce n'est pas une métaphore — c'est le fonctionnement réel de la mémoire à long terme.
+  </p>
+
+  <h3>2. Les exercices avant les cours</h3>
+
+  <p>
+    Lire des cours sans s'exercer, c'est du confort, pas de la préparation. Tu mémorises des règles
+    mais tu ne sais pas les appliquer sous contrainte de temps. Or le jury évalue ta capacité à
+    résoudre des problèmes en 4 heures — pas à réciter.
+  </p>
+
+  <p>
+    La séquence efficace : faire un exercice → identifier ce que tu ne sais pas faire → revenir sur
+    le cours pour comprendre ce point précis → refaire un exercice similaire. Pas l'inverse.
+  </p>
+
+  <h3>3. Cibler ses lacunes, pas tout revoir</h3>
+
+  <p>
+    Travailler sur des notions que tu maîtrises déjà, c'est du temps perdu. L'enjeu, c'est de cibler
+    ce qui te coûte des points. Un diagnostic honnête de tes lacunes — par matière, par type
+    d'exercice — vaut mieux que n'importe quel planning générique trouvé en ligne.
+  </p>
+
+  <h2>Construire son planning de préparation</h2>
+
+  <p>Un planning efficace pour le CRPE n'a pas besoin d'être complexe. Voici ce qui fonctionne :</p>
+
+  <p><strong>En phase de remise à niveau (mois 1 à 3) :</strong></p>
+  <ul>
+    <li>5 jours sur 7 : 20 à 30 minutes d'exercices ciblés (maths et français en alternance)</li>
+    <li>1 fois par semaine : révision d'un point de cours identifié comme lacune</li>
+    <li>1 fois par mois : sujet type concours complet en conditions réelles (4 heures)</li>
+  </ul>
+
+  <p><strong>En phase d'intensification (2 à 3 mois avant les écrits) :</strong></p>
+  <ul>
+    <li>6 jours sur 7 : 30 à 45 minutes d'exercices</li>
+    <li>1 à 2 sujets complets par mois</li>
+    <li>Analyse systématique des erreurs après chaque sujet</li>
+  </ul>
+
+  <p>
+    Le volume horaire hebdomadaire cible est de 3 à 5 heures. Pas plus, pas moins.
+    L'endurance sur plusieurs mois est plus importante que le volume ponctuel sur une semaine.
+  </p>
+
+  <h2>Les 5 erreurs qui font rater le CRPE</h2>
+
+  <p><strong>1. Attendre d'être "prêt(e)" pour commencer les annales.</strong> Les annales sont
+  l'entraînement, pas l'évaluation finale. Plus tu en fais tôt, plus tu progresses vite.
+  Commence dès la première semaine, même sans te sentir prêt(e).</p>
+
+  <p><strong>2. Travailler sans identifier ses lacunes.</strong> Reprendre tout le programme depuis
+  zéro est épuisant et inefficace. Commence par un diagnostic : qu'est-ce qui te coûte des points
+  dans chaque matière ?</p>
+
+  <p><strong>3. Lire des cours sans faire d'exercices.</strong> C'est rassurant mais trompeur.
+  Savoir une règle et savoir l'appliquer sous contrainte de temps, ce sont deux compétences
+  différentes. L'une ne développe pas l'autre.</p>
+
+  <p><strong>4. Ne pas tenir dans la durée.</strong> La plupart des échecs au CRPE ne sont pas
+  des problèmes de niveau — ce sont des problèmes de régularité. Manquer 2 semaines de travail,
+  c'est plusieurs semaines de progression à reconstruire.</p>
+
+  <p><strong>5. Sous-estimer l'épreuve de maths.</strong> Même avec un profil littéraire, les maths
+  sont rattrapables. Mais seulement si on s'y attèle tôt et régulièrement. Beaucoup de candidats
+  réservent les maths pour "plus tard" — et n'y reviennent jamais vraiment avant les épreuves.</p>
+
+  <h2>Par où commencer concrètement</h2>
+
+  <p>Trois étapes, dans cet ordre :</p>
+
+  <p>
+    <strong>Étape 1 — Faire un diagnostic de ton niveau actuel.</strong> Pas sur la base d'une
+    intuition : un diagnostic sur des exercices réels type CRPE, en maths et en français, pour
+    savoir précisément où tu en es. C'est le point de départ qui rend tout le reste efficace.
+  </p>
+
+  <p>
+    <strong>Étape 2 — Identifier tes 2 ou 3 lacunes prioritaires.</strong> Là où tu perds le
+    plus de points. C'est sur elles que tu vas concentrer 70 % de ton énergie dans les premières
+    semaines.
+  </p>
+
+  <p>
+    <strong>Étape 3 — Créer une routine quotidienne courte.</strong> 20 minutes minimum, tous
+    les jours. Choisir un moment fixe et le tenir — matin avant le travail, pause déjeuner, début
+    de soirée. La régularité est l'essentiel.
+  </p>
+
+  <p>
+    Exercia est conçu pour cette approche : sessions quotidiennes courtes, adaptées à ton niveau
+    réel, calibrées sur tes lacunes. Chaque exercice complété te rapproche du niveau attendu par
+    le jury — sans contenu inutile, sans temps perdu.
+  </p>
+
+</ArticleLayout>
