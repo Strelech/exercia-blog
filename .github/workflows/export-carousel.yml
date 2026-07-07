@@ -1,0 +1,46 @@
+name: Export Carousel Instagram
+
+on:
+  workflow_dispatch:
+    inputs:
+      content_json:
+        description: 'Contenu JSON du carousel (5 slides)'
+        required: true
+        type: string
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          pip install playwright
+          playwright install chromium
+          playwright install-deps chromium
+
+      - name: Write content.json
+        run: |
+          echo '${{ inputs.content_json }}' > social/content.json
+
+      - name: Export slides PNG
+        run: |
+          python social/export_carousel.py \
+            --content social/content.json \
+            --out social/output
+
+      - name: Upload PNG to Google Drive
+        env:
+          GDRIVE_CREDENTIALS: ${{ secrets.GDRIVE_CREDENTIALS }}
+          GDRIVE_FOLDER_ID: ${{ secrets.GDRIVE_FOLDER_ID }}
+        run: |
+          pip install google-api-python-client google-auth
+          python social/upload_to_drive.py
