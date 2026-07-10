@@ -28,8 +28,10 @@ jobs:
           playwright install-deps chromium
 
       - name: Write content.json
+        env:
+          CONTENT_JSON: ${{ inputs.content_json }}
         run: |
-          echo '${{ inputs.content_json }}' > social/content.json
+          printf '%s' "$CONTENT_JSON" > social/content.json
 
       - name: Export slides PNG
         run: |
