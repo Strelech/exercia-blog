@@ -8,6 +8,9 @@ on:
         required: true
         type: string
 
+permissions:
+  contents: write
+
 jobs:
   export:
     runs-on: ubuntu-latest
@@ -45,3 +48,15 @@ jobs:
           name: carousel-slides
           path: social/output/*.png
           retention-days: 7
+
+      # Publie aussi les PNG dans le repo (public) pour donner des URLs
+      # stables à l'API Instagram : raw.githubusercontent.com/.../social/published/<run_id>/
+      - name: Commit PNG for public URLs
+        run: |
+          mkdir -p "social/published/${{ github.run_id }}"
+          cp social/output/*.png "social/published/${{ github.run_id }}/"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add social/published/
+          git commit -m "Carousel ${{ github.run_id }} [skip ci]"
+          git push
