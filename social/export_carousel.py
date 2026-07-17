@@ -19,6 +19,9 @@ Format JSON attendu (content.json) :
   "slide4": { "tag": "ERREUR #3", "title": "...", "body": "..." },
   "slide5": { "cta_label": "Prêt à changer de méthode ?", "title": "Entraîne-toi sur les vraies questions du CRPE.", "btn": "Essayer gratuitement", "sub": "exercia.org · lien en bio" }
 }
+
+MAJ (juillet 2026) : slide 1 — eyebrow 24px → 34px, sub 30px → 40px
+(retour utilisateur : sous-textes trop petits sur mobile).
 """
 
 import json
@@ -96,9 +99,9 @@ def build_html(content: dict) -> str:
         <div style="font-family:'Plus Jakarta Sans',sans-serif; font-size:22px; font-weight:700; color:rgba(255,255,255,0.6);">01 / 05</div>
       </div>
       <div style="flex:1; display:flex; flex-direction:column; justify-content:center;">
-        <div style="font-size:24px; font-weight:600; color:#fff; margin-bottom:28px; letter-spacing:0.04em;">{s1['eyebrow']}</div>
+        <div style="font-size:34px; font-weight:600; color:#fff; margin-bottom:28px; letter-spacing:0.04em;">{s1['eyebrow']}</div>
         <h1 style="font-family:'Plus Jakarta Sans',sans-serif; font-size:68px; font-weight:800; line-height:1.12; color:#fff; margin-bottom:36px;">{s1['title']}</h1>
-        <p style="font-size:30px; line-height:1.6; color:#fff; font-weight:500; max-width:88%;">{s1['sub']}</p>
+        <p style="font-size:40px; line-height:1.55; color:#fff; font-weight:500; max-width:92%;">{s1['sub']}</p>
       </div>
       <div style="display:flex; justify-content:space-between; align-items:flex-end;">
         <div style="font-size:22px; font-weight:500; color:rgba(255,255,255,0.7);">← Swipe →</div>
@@ -214,7 +217,7 @@ DEFAULT_STORY7 = {
                "bar1_label": "Récupération Active", "bar1_value": 70,
                "bar2_label": "Relecture Simple", "bar2_value": 20,
                "footer": "Ton cerveau retient ce qu'il doit retrouver, pas ce qu'on lui montre."},
-    "slide5": {"body": "Tu fais des <span class='u'>exercices</span>.\nDès le départ.\nSans avoir \u201ctout révisé\u201d.\nL'erreur est une information précieuse."},
+    "slide5": {"body": "Tu fais des <span class='u'>exercices</span>.\nDès le départ.\nSans avoir “tout révisé”.\nL'erreur est une information précieuse."},
     "slide6": {"bullets": ["20 min d'exercices > 2h de fiches.",
                             "Cible tes lacunes réelles (pas tes préférences).",
                             "Répète ce qui coince jusqu'à automatisation.",
@@ -370,9 +373,9 @@ def export_slides_story7(content, out_dir):
             page.wait_for_timeout(100)
             page.screenshot(path=os.path.join(out_dir, f"slide_{i+1:02d}.png"),
                             clip={"x": 0, "y": 0, "width": 1080, "height": 1350})
-            print(f"\u2713 slide_{i+1:02d}.png")
+            print(f"✓ slide_{i+1:02d}.png")
         browser.close()
-    print(f"\nDone \u2192 {out_dir}")
+    print(f"\nDone → {out_dir}")
 
 # ── Export ─────────────────────────────────────────────────────────────────────
 
