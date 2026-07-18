@@ -20,8 +20,9 @@ Format JSON attendu (content.json) :
   "slide5": { "cta_label": "Prêt à changer de méthode ?", "title": "Entraîne-toi sur les vraies questions du CRPE.", "btn": "Essayer gratuitement", "sub": "exercia.org · lien en bio" }
 }
 
-MAJ (juillet 2026) : slide 1 — eyebrow 24px → 34px, sub 30px → 40px
-(retour utilisateur : sous-textes trop petits sur mobile).
+MAJ (juillet 2026) :
+- slide 1 — eyebrow 24px → 34px, sub 30px → 40px (retour : sous-textes trop petits sur mobile)
+- slide 1 — logo blanc 108×33 → 180×55 (aligné sur le logo de la slide 5)
 """
 
 import json
@@ -77,7 +78,7 @@ def build_html(content: dict) -> str:
     s4 = s["slide4"]
     s5 = s["slide5"]
 
-    logo_white = """<svg width="108" height="33" viewBox="0 0 360 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+    logo_white = """<svg width="180" height="55" viewBox="0 0 360 110" fill="none" xmlns="http://www.w3.org/2000/svg">
       <defs><linearGradient id="rW" x1="38" y1="14" x2="94" y2="96" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#FFFEF5"/><stop offset="55%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#EDF7F8"/></linearGradient></defs>
       <circle cx="70" cy="55" r="34" stroke="url(#rW)" stroke-width="10" stroke-linecap="round" fill="none" stroke-dasharray="180 60" stroke-dashoffset="18"/>
       <path d="M54 55.5L66 67.5L88 43" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
