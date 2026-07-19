@@ -6,8 +6,12 @@
 <priority>1.0</priority>
 </url>
 <url>
-<loc>https://blog.exercia.org/preparer-le-crpe/</loc>
+<loc>https://blog.exercia.org/echec-crpe-2026-reussir-2027</loc>
 <priority>0.95</priority>
+</url>
+<url>
+<loc>https://blog.exercia.org/preparer-le-crpe/</loc>
+<priority>0.9</priority>
 </url>
 <url>
 <loc>https://blog.exercia.org/reforme-crpe-2026-bac3</loc>
