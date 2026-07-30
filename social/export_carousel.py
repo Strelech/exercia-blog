@@ -241,7 +241,7 @@ DEFAULT_STORY7 = {
         "bar2_label": "Relecture Simple",    "bar2_value": 20,
         "footer": "Ton cerveau retient ce qu'il doit retrouver, pas ce qu'on lui montre."
     },
-    "slide5": {"body": "Tu fais des <span class='u'>exercices</span>.\nDès le départ.\nSans avoir "tout révisé".\nL'erreur est une information précieuse."},
+    "slide5": {"body": "Tu fais des <span class='u'>exercices</span>.\nDès le départ.\nSans avoir \"tout révisé\".\nL'erreur est une information précieuse."},
     "slide6": {"bullets": [
         "20 min d'exercices > 2h de fiches.",
         "Cible tes lacunes réelles (pas tes préférences).",
